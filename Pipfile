@@ -7,6 +7,9 @@ name = "pypi"
 requests = "*"
 bs4 = "*"
 llama-index = "*"
+pinecone-client = "*"
+python-dotenv = "*"
+openai = "*"
 
 [dev-packages]
 
