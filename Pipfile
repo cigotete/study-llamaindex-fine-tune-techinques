@@ -10,6 +10,7 @@ llama-index = "*"
 pinecone-client = "*"
 python-dotenv = "*"
 openai = "*"
+llama-hub = "*"
 
 [dev-packages]
 
