@@ -12,6 +12,7 @@ python-dotenv = "*"
 openai = "*"
 llama-hub = "*"
 pymupdf = "*"
+pypdf = "*"
 
 [dev-packages]
 
