@@ -13,6 +13,7 @@ openai = "*"
 llama-hub = "*"
 pymupdf = "*"
 pypdf = "*"
+streamlit = "*"
 
 [dev-packages]
 
