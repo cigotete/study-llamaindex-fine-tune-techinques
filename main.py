@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+import json
 
 from llama_index.callbacks import LlamaDebugHandler, CallbackManager
 from llama_index.chat_engine.types import ChatMode
@@ -71,8 +72,13 @@ if st.session_state.messages[-1]["role"] != "assistant":
         with st.spinner("Thinking..."):
             # Here is where the assistant responds based on the user's input
             response = st.session_state.chat_engine.chat(message=prompt)
-            #nodes = [node for node in response.source_nodes]
-            st.write(response.response)
+            nodes = [node for node in response.source_nodes]
+            for col, node, i in zip(st.columns(len(nodes)), nodes, range(len(nodes))):
+                type(node.text)
+                with col:
+                    st.header(f"Source Node {i+1}: score= {node.score}")
+                    st.write(node.text)
+            st.write(json.loads(response.response))
             # Appends the response to the messages
             message = {"role": "assistant", "content": response.response}
             # response is appended to messages
